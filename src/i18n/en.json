@@ -1,0 +1,135 @@
+{
+  "ORDER_HISTORY": "Order History",
+  "ORDER_TRACKING":"Order Tracking",
+  "plants":"Plants",
+  "slump":"Slump",
+  "site":"Site",
+  "graph":"Graph",
+  "order":"order",
+  "strength":"Strength",
+  "freeze":"Freeze",
+  "comments":"Comments",
+  "update":"Update",
+  "loading": "Loading...",
+  "invoice":"Invoice",
+  "time":"Time",
+  "date":"Date",
+  "amount":"Amount",
+  "ongoing_orders":"Ongoing Orders",
+  "license_plate":"License",
+  "product":"Product",
+  "plant":"Plant",
+  "interval":"Interval",
+  "app": {
+    "name": "Lab App",
+    "description": ""
+  },
+  "register": {
+    "title": "Register",
+    "subtitle": "Create your account",
+    "select_region": "Select region",
+    "select_language": "Select language",
+    "name": "Name",
+    "success_title": "Registration Successful",
+    "success_message": "Successfully registered. We will activate your account within 24 hours.",
+    "success_button": "OK",
+
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "repeat_password": "Repeat Password",
+    "address": "Address",
+    "tax_code": "Tax Code",
+    "company_account": "Company account",
+    "company_name": "Company Name",
+    "company_code": "Company Code",
+    "register": "Register",
+    "login": "Login",
+    "errors": {
+      "name_required": "Name is required",
+      "email_required": "Email is required",
+      "email_invalid": "Invalid email format",
+      "phone_required": "Phone is required",
+      "phone_invalid": "Phone must start with + and contain only numbers",
+      "password_required": "Password is required",
+      "password_invalid": "Min 8 chars, 1 uppercase letter and 1 number required",
+      "repeat_password_required": "Repeat password is required",
+      "passwords_not_match": "Passwords do not match"
+    }
+  },
+
+  "sign_in": {
+    "welcome_back":" Welcome Back",
+    "please_login": "Please login",
+    "sign_out": "Log out",
+    "delete_account": "Delete Account",
+    "delete_account_title": "Delete account",
+    "delete_account_message": "Are you sure? This action cannot be undone.",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "remember_me": "Remember me?",
+    "email": "Username",
+    "password": "Password",
+    "select_region": "Select Region",
+    "select_language":"Select Language",
+    "login":"Login",
+    "register": "Register",
+    "forgot_password":"Forgot password?",
+    "dialog_error_title": "Could Not Sign In",
+    "forgot_password_dialog": {
+      "title": "Password Reset",
+      "description": "Please enter your email address to reset your password.",
+      "ok_button": "Reset",
+      "cancel_button": "Cancel"
+    },
+    "reset_password_confirmation_dialog": {
+      "title": "Password Reset Email Sent",
+      "description": "Please check your inbox for a password reset email, and follow the instructions in the email."
+    }
+  },
+  "strength_form":{
+    "strength_test":"Strength Test",
+    "date_of_sampling":"Date Of Sampling",
+    "sampling_by":"Sampling By",
+    "tested_by":"Tested By",
+    "test_time":"Test Time",
+    "strength":"Strength",
+    "density":"Density",
+    "1_day": "1 Day",
+    "7_day": "7 Day",
+    "14_day": "14 Day",
+    "28_day": "28 Day"
+  },
+  "slump_form":{
+    "slump_test":"Slump Test",
+    "time":"Time",
+    "slump":"Slump, mm:",
+    "temperature":"Temperature, C",
+    "air":"Air, %",
+    "tested_by":"Tested By"
+  },
+  "freeze_form":{
+    "freeze_test":"Freeze Test",
+    "test_time":"Test Time",
+    "number_of_cycles":"Number Of Cycles",
+    "tested_by":"Tested By",
+    "mass_before":"Mass Before",
+    "mass_after":"Mass After",
+    "percentage":"%"
+  },
+  "filter_form":{
+    "filter":"Filter",
+    "all":"All",
+    "period":"Period",
+    "this_month":"This month",
+    "last_month":"Last Month",
+    "waybill_number":"Waybill Number",
+    "waybill_placeholder":"Input waybill number here",
+    "client": "Client",
+    "client_placeholder":"Input client here",
+    "clear":"Clear"
+  },
+  "orders":{
+    "empty":"No order found!"
+  }
+}

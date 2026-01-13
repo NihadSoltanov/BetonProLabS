@@ -1,0 +1,136 @@
+{
+  "ORDER_HISTORY": "Užsakymų istorija",
+  "ORDER_TRACKING":"Vykdomi užsakymai",
+  "plants":"Gamykloje",
+  "slump":"Slankumas",
+  "site":"Objekte",
+  "graph":"Grafikas",
+  "order": "užsakymų",
+  "strength":"Stiprumas",
+  "freeze":"Šalčio testas",
+  "comments":"Komentarai",
+  "update":"Išsaugoti",
+  "loading": "Krauname...",
+  "invoice":"Važtaraštis",
+  "time":"Laikas",
+  "date":"Data",
+  "amount":"Kiekis",
+  "ongoing_orders":"užsakymų",
+  "license_plate":"Auto Nr",
+  "product":"Betonas",
+  "plant":"Gamykla",
+  "interval":"Intervalas",
+  "app": {
+    "name": "Lab App",
+    "description": ""
+  },
+  "register": {
+    "title": "Registracija",
+    "subtitle": "Sukurkite paskyrą",
+    "select_region": "Pasirinkite regioną",
+    "select_language": "Pasirinkite kalbą",
+    "name": "Vardas",
+    "email": "El. paštas",
+    "phone": "Telefonas",
+    "success_title": "Registracija sėkminga",
+    "success_message": "Registracija sėkminga. Jūsų paskyra bus aktyvuota per 24 valandas.",
+    "success_button": "Gerai",
+
+    "password": "Slaptažodis",
+    "repeat_password": "Pakartokite slaptažodį",
+    "address": "Adresas",
+    "tax_code": "Mokesčių kodas",
+    "company_account": "Įmonės paskyra",
+    "company_name": "Įmonės pavadinimas",
+    "company_code": "Įmonės kodas",
+    "register": "Registruotis",
+    "login": "Prisijungti",
+    "errors": {
+      "name_required": "Vardas yra privalomas",
+      "email_required": "El. paštas yra privalomas",
+      "email_invalid": "Neteisingas el. pašto formatas",
+      "phone_required": "Telefonas yra privalomas",
+      "phone_invalid": "Telefonas turi prasidėti + ir sudarytas tik iš skaičių",
+      "password_required": "Slaptažodis yra privalomas",
+      "password_invalid": "Mažiausiai 8 simboliai, 1 didžioji raidė ir 1 skaičius",
+      "repeat_password_required": "Pakartokite slaptažodį",
+      "passwords_not_match": "Slaptažodžiai nesutampa"
+    }
+  },
+
+  "sign_in": {
+    "welcome_back":"Sveiki sugrįžę",
+    "please_login": "Prašome prisijungti",
+    "sign_out": "Atsijungti",
+    "delete_account": "Ištrinti paskyrą",
+    "delete_account_title": "Paskyros ištrynimas",
+    "delete_account_message": "Ar tikrai norite? Šio veiksmo atšaukti negalima.",
+    "cancel": "Atšaukti",
+    "delete": "Ištrinti",
+    "remember_me": "Prisiminti mane?",
+
+    "email": "Vartotojo vardas",
+    "password": "Slaptažodis",
+    "login":"Prisijungimas",
+    "register": "Registracija",
+    "select_region": "Pasirinkite regioną",
+    "select_language":"Pasirinkite kalbą",
+    "forgot_password":"Pamiršote slaptažodį?",
+    "dialog_error_title": "Negalima prisijungti",
+    "forgot_password_dialog": {
+      "title": "Slaptažodžio nustatymas iš naujo",
+      "description": "Norėdami iš naujo nustatyti slaptažodį, įveskite savo el. pašto adresą",
+      "ok_button": "Nustatyti iš naujo",
+      "cancel_button": "Atšaukti"
+    },
+    "reset_password_confirmation_dialog": {
+      "title": "Slaptažodžio nustatymo iš naujo el. laiškas išsiųstas",
+      "description": "Patikrinkite, ar gautuosiuose nėra slaptažodžio nustatymo iš naujo el. laiško, ir vadovaukitės el. laiške pateiktomis instrukcijomis"
+    }
+  },
+  "strength_form":{
+    "strength_test":"Stiprumo testas",
+    "date_of_sampling":"Mėginių paėmimo laikas",
+    "sampling_by":"Mėginį paėmė",
+    "tested_by":"Atliko",
+    "test_time":"Bandymo laikas",
+    "strength":"Stipris",
+    "density":"Tankis",
+    "1_day": "1 dieną",
+    "7_day": "7 dieną",
+    "14_day": "14 dieną",
+    "28_day": "28 dieną"
+  },
+  "slump_form":{
+    "slump_test": "Slankumo testas",
+    "time":"Laikas",
+    "slump":"Slankumas, mm:",
+    "temperature":"Temperatūra, C",
+    "air":"Oras, %",
+    "tested_by":"Atliko"
+  },
+  "freeze_form":{
+    "freeze_test":"Šalčio testas",
+    "test_time":"Bandymo laikas",
+    "number_of_cycles":"Ciklų skaičius",
+    "tested_by":"Atliko",
+    "mass_before":"Masė prieš",
+    "mass_after":"Masė po",
+    "percentage":"%"
+  },
+  "filter_form":{
+    "filter":"Filtras",
+    "all":"Visi",
+    "period":"Laikotarpis",
+    "this_month":"Šį mėnesį",
+    "last_month":"Praeitą mėnesį",
+    "waybill_number":"Važtaraščio numeris",
+    "waybill_placeholder":"Įveskite važtaraščio numerį",
+    "client": "Klientas",
+    "client_placeholder":"Įveskite klientą ",
+    "clear":"Išvalyti"
+  },
+  "orders":{
+    "empty":"Užsakymų nerasta!"
+  }
+}

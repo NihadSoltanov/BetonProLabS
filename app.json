@@ -3,7 +3,7 @@
     "name": "BetonPro Laboratory",
     "newArchEnabled": true,
     "slug": "BetonPro",
-    "version": "9.0.1",
+    "version": "9.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "light",

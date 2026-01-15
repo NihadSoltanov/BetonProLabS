@@ -107,6 +107,8 @@
     "slump":"спад, mm",
     "temperature":"Температура, C",
     "air":"Воздух, %",
+    "density": "Плотность",
+
     "tested_by":"Протестировано"
   },
   "freeze_form":{

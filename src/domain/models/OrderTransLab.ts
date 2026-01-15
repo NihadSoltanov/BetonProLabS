@@ -9,6 +9,7 @@ export interface OrderTransLab {
     slump_on_plant?: string;
     temperature?: string;
     air_intake?: string;
+    density?: string;
     slump_person?: string;
     slump_time_on_plant?: string;
     slump_on_client_side?: string;

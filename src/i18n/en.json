@@ -106,6 +106,7 @@
     "slump":"Slump, mm:",
     "temperature":"Temperature, C",
     "air":"Air, %",
+    "density": "Density",
     "tested_by":"Tested By"
   },
   "freeze_form":{

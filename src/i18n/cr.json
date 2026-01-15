@@ -107,6 +107,7 @@
       "slump":"Konzistencija, mm:",
       "temperature":"Temperatura, C",
       "air":"Zrak, %  ",
+      "density": "Gustoća",
       "tested_by":"Testirao"
     },
     "freeze_form":{

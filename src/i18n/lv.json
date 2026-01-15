@@ -107,6 +107,8 @@
     "slump":"Slankumas, mm:",
     "temperature":"Temperatūra, C",
     "air":"Gaiss, %",
+    "density": "Blīvums",
+
     "tested_by":"Pārbaudījis"
   },
   "freeze_form":{

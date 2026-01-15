@@ -106,6 +106,7 @@
     "time":"Laikas",
     "slump":"Slankumas, mm:",
     "temperature":"Temperatūra, C",
+    "density": "Tankis",
     "air":"Oras, %",
     "tested_by":"Atliko"
   },

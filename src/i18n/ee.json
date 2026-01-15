@@ -106,6 +106,8 @@
     "slump":"Madal, mm:",
     "temperature":"Temperatuur, C",
     "air":"Õhk, %",
+    "density": "Tihedus",
+
     "tested_by":"Testinud"
   },
   "freeze_form":{

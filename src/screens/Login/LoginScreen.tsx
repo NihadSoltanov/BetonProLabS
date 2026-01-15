@@ -22,6 +22,7 @@ import { saveString, loadString } from 'src/utils/appStorage';
 import { useAuth } from 'src/contexts/Auth';
 import { FONT_SIZES } from 'src/themes/fonts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const LANG_DATA = [
   { label: 'English', value: 'en' },
@@ -44,6 +45,7 @@ export const LoginScreen = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
 
   const [rememberMe, setRememberMe] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const auth = useAuth();
   const navigation = useNavigation();
@@ -61,7 +63,6 @@ export const LoginScreen = () => {
     },
   });
 
-  // ✅ Screen açılınca remember_me oxu
   useEffect(() => {
     (async () => {
       const saved = await AsyncStorage.getItem(REMEMBER_KEY);
@@ -76,19 +77,17 @@ export const LoginScreen = () => {
       username: attrs.email,
       password: attrs.password,
       base_url: url,
-      rememberMe, // ✅ Auth-a ötürürük
+      rememberMe,
     });
   };
 
   const onHandleLanguage = async (lang: string) => {
     setSelectedLanguage(lang);
     setLanguageFocus(false);
-
     await i18n.changeLanguage(lang);
     await saveString('language', lang);
   };
 
-  // ✅ checkbox toggle + AsyncStorage-a yaz
   const toggleRememberMe = async () => {
     const next = !rememberMe;
     setRememberMe(next);
@@ -120,7 +119,6 @@ export const LoginScreen = () => {
                         onBlur={onBlur}
                         onChangeText={onChange}
                         value={value}
-                        textContentType="emailAddress"
                         keyboardType="email-address"
                         autoCapitalize="none"
                         autoCorrect={false}
@@ -131,51 +129,59 @@ export const LoginScreen = () => {
                 {errors.email && <Text>Email is required.</Text>}
               </View>
 
-              {/* Password */}
+              {/* Password with eye icon */}
               <View>
                 <Text style={styles.inputLabel}>{t('sign_in.password')}</Text>
-                <View style={styles.inputBottomBorder}>
+
+                <View
+                  style={[
+                    styles.inputBottomBorder,
+                    { flexDirection: 'row', alignItems: 'center' },
+                  ]}
+                >
                   <Controller
                     name="password"
                     control={control}
                     rules={{ required: true }}
                     render={({ field: { onChange, onBlur, value } }) => (
                       <TextInput
-                        style={styles.input}
+                        style={[styles.input, { flex: 1 }]}
                         onBlur={onBlur}
                         onChangeText={onChange}
                         value={value}
                         autoCapitalize="none"
-                        secureTextEntry
+                        secureTextEntry={!showPassword}
                       />
                     )}
                   />
+
+                  <TouchableOpacity
+                    onPress={() => setShowPassword(prev => !prev)}
+                    style={{ paddingHorizontal: 8 }}
+                  >
+                    <Ionicons
+                      name={showPassword ? 'eye-off' : 'eye'}
+                      size={22}
+                      color={COLORS.darkGreen}
+                    />
+                  </TouchableOpacity>
                 </View>
+
                 {errors.password && <Text>Password is required.</Text>}
               </View>
 
               {/* Region */}
-              <View>
-                <Controller
-                  control={control}
-                  name="plant"
-                  render={({ field: { value } }) => (
+              <Controller
+                control={control}
+                name="plant"
+                render={({ field: { value } }) => (
                   <Dropdown
                     style={[
                       styles.dropDown,
                       regionFocus && { borderBottomColor: COLORS.darkGreen },
                     ]}
-                    placeholderStyle={[
-                      styles.dropDownPlaceholderStyle,
-                      { fontSize: 17, fontWeight: '700' },
-                    ]}
-                    selectedTextStyle={[
-                      styles.dropDownSelectedTextStyle,
-                      { fontSize: 17, fontWeight: '700' },
-                    ]}
-                    itemTextStyle={{ fontSize: 17, fontWeight: '700', color: COLORS.darkGreen }}
-                    itemContainerStyle={{ paddingVertical: 6 }}
-                    inputSearchStyle={styles.dropDownInputSearchStyle}
+                    placeholderStyle={styles.dropDownPlaceholderStyle}
+                    selectedTextStyle={styles.dropDownSelectedTextStyle}
                     data={REGION_DATA}
                     value={value}
                     labelField="label"
@@ -185,69 +191,50 @@ export const LoginScreen = () => {
                       setRegionFocus(false);
                       await saveString('base_url', item.value);
                     }}
-                    iconColor={COLORS.darkGreen}
                     onFocus={() => setRegionFocus(true)}
                     onBlur={() => setRegionFocus(false)}
-                    placeholder={!regionFocus ? t('sign_in.select_region') : '...'}
+                    placeholder={t('sign_in.select_region')}
                   />
-
-                  )}
-                />
-              </View>
+                )}
+              />
 
               {/* Language */}
-              <View>
-                <Dropdown
-                  style={[
-                    styles.dropDown,
-                    languageFocus && { borderBottomColor: COLORS.darkGreen },
-                  ]}
-                  placeholderStyle={[
-                    styles.dropDownPlaceholderStyle,
-                    { fontSize: 17, fontWeight: '700' },
-                  ]}
-                  selectedTextStyle={[
-                    styles.dropDownSelectedTextStyle,
-                    { fontSize: 17, fontWeight: '700' },
-                  ]}
-                  itemTextStyle={{ fontSize: 17, fontWeight: '700', color: COLORS.darkGreen }}
-                  itemContainerStyle={{ paddingVertical: 6 }}
-                  inputSearchStyle={styles.dropDownInputSearchStyle}
-                  data={LANG_DATA}
-                  value={selectedLanguage}
-                  labelField="label"
-                  valueField="value"
-                  onChange={item => onHandleLanguage(item.value)}
-                  iconColor={COLORS.darkGreen}
-                  onFocus={() => setLanguageFocus(true)}
-                  onBlur={() => setLanguageFocus(false)}
-                  placeholder={!languageFocus ? t('sign_in.select_language') : '...'}
-                />
+              <Dropdown
+                style={[
+                  styles.dropDown,
+                  languageFocus && { borderBottomColor: COLORS.darkGreen },
+                ]}
+                placeholderStyle={styles.dropDownPlaceholderStyle}
+                selectedTextStyle={styles.dropDownSelectedTextStyle}
+                data={LANG_DATA}
+                value={selectedLanguage}
+                labelField="label"
+                valueField="value"
+                onChange={item => onHandleLanguage(item.value)}
+                onFocus={() => setLanguageFocus(true)}
+                onBlur={() => setLanguageFocus(false)}
+                placeholder={t('sign_in.select_language')}
+              />
 
+              {/* Remember me */}
+              <View style={styles.rememberRow}>
+                <TouchableOpacity
+                  onPress={toggleRememberMe}
+                  style={styles.rememberTouch}
+                >
+                  <View
+                    style={[
+                      styles.checkboxOuter,
+                      rememberMe && { backgroundColor: COLORS.lightGreen },
+                    ]}
+                  >
+                    {rememberMe && <Text>✓</Text>}
+                  </View>
+                  <Text style={styles.rememberText}>
+                    {t('sign_in.remember_me')}
+                  </Text>
+                </TouchableOpacity>
               </View>
-
-              {/* ✅ Remember me (Select Language altında) */}
-             <View style={styles.rememberRow}>
-               <TouchableOpacity
-                 activeOpacity={0.8}
-                 onPress={toggleRememberMe}
-                 style={styles.rememberTouch}
-               >
-                 <View
-                   style={[
-                     styles.checkboxOuter,
-                     { borderColor: COLORS.lightGreen },
-                     rememberMe && { backgroundColor: COLORS.lightGreen },
-                   ]}
-                 >
-                   {rememberMe ? <Text style={styles.checkboxTick}>✓</Text> : null}
-                 </View>
-
-<Text style={[styles.rememberText, { fontSize: 17, fontWeight: '700' }]}>
-                   {t('sign_in.remember_me')}
-                 </Text>
-               </TouchableOpacity>
-             </View>
 
               {/* Buttons */}
               <View style={styles.btnWrapper}>

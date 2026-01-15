@@ -219,25 +219,16 @@ export const OrderCard: FC<OrderCardProps> = props => {
                                             isSelected={selectedFreezeIndex===i}
                                         />
                                         }
-                                        {props.isOngoingOrder ? (
-                                              (selectedStrengthIndex===i) &&
-                                            <LAFormStrengthOngoing
-                                                visible={showStrengthModal}
-                                                onClose={onCloseStrength}
-                                                plantId={props.plantId}
-                                                deliveryId={e.delivery_id}
-                                                isSelected={selectedStrengthIndex===i}
-                                            />
-                                        ) : (
-                                            (selectedStrengthIndex===i) &&
-                                            <LAFormStrength
-                                                visible={showStrengthModal}
-                                                onClose={onCloseStrength}
-                                                isSelected={selectedStrengthIndex===i}
-                                                plantId={props.plantId}
-                                                deliveryId={e.delivery_id}
-                                            />
-                                        )}
+                                      {(selectedStrengthIndex === i) && (
+                                        <LAFormStrength
+                                          visible={showStrengthModal}
+                                          onClose={onCloseStrength}
+                                          isSelected={selectedStrengthIndex === i}
+                                          plantId={props.plantId}
+                                          deliveryId={e.delivery_id}
+                                        />
+                                      )}
+
                                         <View style={styles.webViewContainer}>
                                             <TouchableOpacity
                                                 onPress={() =>
@@ -265,7 +256,7 @@ export const OrderCard: FC<OrderCardProps> = props => {
                                                         setShowSlumpModal(!showSlumpModal);
                                                         setSelectedSlumpIndex(i);
                                                     }
-                                                        
+
                                                     }>
                                                     <Icon
                                                         name={SlumpIcon}
